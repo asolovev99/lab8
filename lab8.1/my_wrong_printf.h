@@ -446,41 +446,41 @@ void my_printf(const char* output, ...) // % [ flags] [ Ширина] [. точность] [ Р
 								is_sign_printed = 1;
 							}
 
-							for (int j = 0; j < length_input - 1; j++)
+							for (int j = 0; j < length_input; j++)
 							{
 								putchar(((int)input / get_power(10, length_input - 1 - j) % 10) + '0');
 							}
 
 							if (precision > 0)
 							{
-								putchar(((int)input % 10) + '0');
+								//putchar(((int)input % 10) + '0');
 
 								putchar('.');
 
-								for (int j = 1; j < precision; j++) // Вывод дробной части, кроме последней цифры
+								for (int j = 1; j < precision + 1; j++) // Вывод дробной части, кроме последней цифры
 								{
 									putchar(/*(int)(input * get_power(10, j)) % 10*/get_symbol(input, -j) + '0');
 								}
 
-								if ((int)(input * get_power(10, precision + 1)) % 10 < 5) // Вывод последней цифры дробной части
-								{
-									putchar(/*input* get_power(10, precision)) % 10*/get_symbol(input, -precision) + '0');
-								}
-								else
-								{
-									putchar(/*input* get_power(10, precision)) % 10*/get_symbol(input, -precision) + '0' + 1);
-								}
+								//if ((int)(input * get_power(10, precision + 1)) % 10 < 5) // Вывод последней цифры дробной части
+								//{
+								//	putchar(/*input* get_power(10, precision)) % 10*/get_symbol(input, -precision) + '0');
+								//}
+								//else
+								//{
+								//	putchar(/*input* get_power(10, precision)) % 10*/get_symbol(input, -precision) + '0' + 1);
+								//}
 							}
 							else
 							{
-								if (get_symbol(input, -1) < 5) // Вывод последней цифры дробной части
-								{
-									putchar(((int)input % 10) + '0');
-								}
-								else
-								{
-									putchar(((int)input % 10) + '0' + 1);
-								}
+								//if (get_symbol(input, -1) < 5) // Вывод последней цифры дробной части
+								//{
+								//	putchar(((int)input % 10) + '0');
+								//}
+								//else
+								//{
+								//	putchar(((int)input % 10) + '0' + 1);
+								//}
 							}
 
 							for (int j = 0; j < min_width - is_sign_printed - length_input - (precision > 0) - precision; j++)
@@ -528,41 +528,41 @@ void my_printf(const char* output, ...) // % [ flags] [ Ширина] [. точность] [ Р
 							}
 
 
-							for (int j = 0; j < length_input - 1; j++)
+							for (int j = 0; j < length_input; j++)
 							{
 								putchar(((int)input / get_power(10, length_input - 1 - j) % 10) + '0');
 							}
 
 							if (precision > 0)
 							{
-								putchar(((int)input % 10) + '0');
+								//putchar(((int)input % 10) + '0');
 
 								putchar('.');
 
-								for (int j = 1; j < precision; j++) // Вывод дробной части, кроме последней цифры
+								for (int j = 1; j < precision + 1; j++) // Вывод дробной части, кроме последней цифры
 								{
 									putchar(/*(int)(input * get_power(10, j)) % 10*/get_symbol(input, -j) + '0');
 								}
 
-								if ((int)(input * get_power(10, precision + 1)) % 10 < 5) // Вывод последней цифры дробной части
-								{
-									putchar(/*input* get_power(10, precision)) % 10*/get_symbol(input, -precision) + '0');
-								}
-								else
-								{
-									putchar(/*input* get_power(10, precision)) % 10*/get_symbol(input, -precision) + '0' + 1);
-								}
+								//if ((int)(input * get_power(10, precision + 1)) % 10 < 5) // Вывод последней цифры дробной части
+								//{
+								//	putchar(/*input* get_power(10, precision)) % 10*/get_symbol(input, -precision) + '0');
+								//}
+								//else
+								//{
+								//	putchar(/*input* get_power(10, precision)) % 10*/get_symbol(input, -precision) + '0' + 1);
+								//}
 							}
 							else
 							{
-								if (get_symbol(input, -1) < 5) // Вывод последней цифры дробной части
-								{
-									putchar(((int)input % 10) + '0');
-								}
-								else
-								{
-									putchar(((int)input % 10) + '0' + 1);
-								}
+								//if (get_symbol(input, -1) < 5) // Вывод последней цифры дробной части
+								//{
+								//	putchar(((int)input % 10) + '0');
+								//}
+								//else
+								//{
+								//	putchar(((int)input % 10) + '0' + 1);
+								//}
 							}
 
 
